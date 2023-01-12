@@ -1,6 +1,4 @@
-name: Deploy HTML Files to AppService - CMST385
-
-on:
+ on:
 
   push:
 
@@ -18,7 +16,7 @@ jobs:
 
     - uses: actions/checkout@main
 
-    - name: Deploy to Azure Web App
+    - name: Deploy HTML Files to AppService - CMST385
 
       uses: azure/webapps-deploy@v1
 
@@ -26,4 +24,4 @@ jobs:
        app-name: 'cmst385-zasbury1273858'
 
         slot-name: 'production'
-        publish-profile: AppServiceCMST385
+        publish-profile: ${{AppServiceCMST385}}
