@@ -7,10 +7,10 @@ jobs:
   build-and-deploy:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@main
-    - name: Deploy HTML Files to AppService - CMST385
+    - uses: actions/checkout@master
+    - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with:
         app-name: 'cmst385-zasbury1273858'
         slot-name: 'production'
-        publish-profile: ${{AppServiceCMST385}}
+        publish-profile: ${{ secrets.AppServiceCMST385 }}
